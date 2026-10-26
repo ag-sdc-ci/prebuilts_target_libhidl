@@ -351,6 +351,7 @@ cc_prebuilt_library {
 
 cc_prebuilt_library {
     name: "android.hidl.base@1.0",
+    vendor_available: true,
     host_supported: true,
     recovery_available: true,
     native_bridge_supported: true,

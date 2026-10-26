@@ -118,6 +118,14 @@ cc_prebuilt_library {
                 srcs: ["lib64/libhidlbase.a"],
             },
         },
+        x86: {
+            shared: {
+                srcs: ["lib/libhidlbase.so"],
+            },
+            static: {
+                srcs: ["lib/libhidlbase.a"],
+            },
+        },
     },
 }
 
@@ -133,6 +141,14 @@ cc_prebuilt_library {
             },
             static: {
                 srcs: ["lib64/libhidltransport.a"],
+            },
+        },
+            x86: {
+            shared: {
+                srcs: ["lib/libhidltransport.so"],
+            },
+            static: {
+                srcs: ["lib/libhidltransport.a"],
             },
         },
     },
@@ -183,6 +199,14 @@ cc_prebuilt_library {
                 srcs: ["lib64/libhidlmemory.a"],
             },
         },
+            x86: {
+            shared: {
+                srcs: ["lib/libhidlmemory.so"],
+            },
+            static: {
+                srcs: ["lib/libhidlmemory.a"],
+            },
+        },
     },
 }
 
@@ -199,6 +223,9 @@ cc_prebuilt_library_shared {
     arch: {
         x86_64: {
             srcs: ["lib64/libhwminijail.so"],
+        },
+            x86: {
+            srcs: ["lib/libhwminijail.so"],
         },
     },
 }
@@ -232,6 +259,14 @@ cc_prebuilt_library {
                 srcs: ["lib64/libhidlallocatorutils.a"],
             },
         },
+            x86: {
+            shared: {
+                srcs: ["lib/libhidlallocatorutils.so"],
+            },
+            static: {
+                srcs: ["lib/libhidlallocatorutils.a"],
+            },
+        },
     },
 }
 
@@ -252,6 +287,9 @@ cc_prebuilt_library_shared {
     arch: {
         x86_64: {
             srcs: ["lib64/android.hidl.memory@1.0-impl.so"],
+        },
+            x86: {
+            srcs: ["lib/android.hidl.memory@1.0-impl.so"],
         },
     },
 }
@@ -288,6 +326,14 @@ cc_prebuilt_library {
             },
             static: {
                 srcs: ["lib64/android.hidl.token@1.0-utils.a"],
+            },
+        },
+            x86: {
+            shared: {
+                srcs: ["lib/android.hidl.token@1.0-utils.so"],
+            },
+            static: {
+                srcs: ["lib/android.hidl.token@1.0-utils.a"],
             },
         },
     },
@@ -349,6 +395,14 @@ cc_prebuilt_library {
                 srcs: ["lib64/android.hidl.allocator@1.0.a"],
             },
         },
+            x86: {
+            shared: {
+                srcs: ["lib/android.hidl.allocator@1.0.so"],
+            },
+            static: {
+                srcs: ["lib/android.hidl.allocator@1.0.a"],
+            },
+        },
     },
 }
 
@@ -382,6 +436,14 @@ cc_prebuilt_library {
             },
             static: {
                 srcs: ["lib64/android.hidl.base@1.0.a"],
+            },
+        },
+            x86: {
+            shared: {
+                srcs: ["lib/android.hidl.base@1.0.so"],
+            },
+            static: {
+                srcs: ["lib/android.hidl.base@1.0.a"],
             },
         },
     },
@@ -418,6 +480,14 @@ cc_prebuilt_library {
             },
             static: {
                 srcs: ["lib64/android.hidl.manager@1.0.a"],
+            },
+        },
+            x86: {
+            shared: {
+                srcs: ["lib/android.hidl.manager@1.0.so"],
+            },
+            static: {
+                srcs: ["lib/android.hidl.manager@1.0.a"],
             },
         },
     },
@@ -458,6 +528,14 @@ cc_prebuilt_library {
                 srcs: ["lib64/android.hidl.manager@1.1.a"],
             },
         },
+            x86: {
+            shared: {
+                srcs: ["lib/android.hidl.manager@1.1.so"],
+            },
+            static: {
+                srcs: ["lib/android.hidl.manager@1.1.a"],
+            },
+        },
     },
 }
 
@@ -496,6 +574,14 @@ cc_prebuilt_library {
             },
             static: {
                 srcs: ["lib64/android.hidl.manager@1.2.a"],
+            },
+        },
+            x86: {
+            shared: {
+                srcs: ["lib/android.hidl.manager@1.2.so"],
+            },
+            static: {
+                srcs: ["lib/android.hidl.manager@1.2.a"],
             },
         },
     },
@@ -540,6 +626,14 @@ cc_prebuilt_library {
                 srcs: ["lib64/android.hidl.memory@1.0.a"],
             },
         },
+            x86: {
+            shared: {
+                srcs: ["lib/android.hidl.memory@1.0.so"],
+            },
+            static: {
+                srcs: ["lib/android.hidl.memory@1.0.a"],
+            },
+        },
     },
 }
 
@@ -572,6 +666,14 @@ cc_prebuilt_library {
             },
             static: {
                 srcs: ["lib64/android.hidl.memory.block@1.0.a"],
+            },
+        },
+            x86: {
+            shared: {
+                srcs: ["lib/android.hidl.memory.block@1.0.so"],
+            },
+            static: {
+                srcs: ["lib/android.hidl.memory.block@1.0.a"],
             },
         },
     },
@@ -616,6 +718,14 @@ cc_prebuilt_library {
                 srcs: ["lib64/android.hidl.memory.token@1.0.a"],
             },
         },
+            x86: {
+            shared: {
+                srcs: ["lib/android.hidl.memory.token@1.0.so"],
+            },
+            static: {
+                srcs: ["lib/android.hidl.memory.token@1.0.a"],
+            },
+        },
     },
 }
 
@@ -655,6 +765,14 @@ cc_prebuilt_library {
                 srcs: ["lib64/android.hidl.safe_union@1.0.a"],
             },
         },
+            x86: {
+            shared: {
+                srcs: ["lib/android.hidl.safe_union@1.0.so"],
+            },
+            static: {
+                srcs: ["lib/android.hidl.safe_union@1.0.a"],
+            },
+        },
     },
 }
 
@@ -692,6 +810,14 @@ cc_prebuilt_library {
             },
             static: {
                 srcs: ["lib64/android.hidl.token@1.0.a"],
+            },
+        },
+            x86: {
+            shared: {
+                srcs: ["lib/android.hidl.token@1.0.so"],
+            },
+            static: {
+                srcs: ["lib/android.hidl.token@1.0.a"],
             },
         },
     },

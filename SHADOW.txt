@@ -1,0 +1,25 @@
+shadow prebuilt repo: libhidl (target)
+  upstream: system/libhidl
+  api-level: 34 payload, LEVEL v3 (branch 34)
+  blobs: org.blisslabs.ag.ext.libhidl.apex @ 14000001
+    (extracted; blobs deleted, zero-extractive-blob policy)
+  recipe: apex/libhidl built from ag-ci/system_libhidl @ a2ddbae (local makeapex ag-build API=34)
+  layout: flattened root (payload contents at repo root)
+  modules:
+    libhidlbase, libhidltransport, libhidlmemory, libhwminijail, libhidlallocatorutils,
+    libhidl_gtest_helper, libhidl-defaults, libhidlbase-combined-impl, libhidl,
+    android.hidl (hidl_package_root), checked_in_hidl_current (filegroup),
+    android.hidl.allocator@1.0-service (binary),
+    android.hidl.memory@1.0-impl (shared lib),
+    android.hidl.token@1.0-utils (shared and static),
+    10 transport HAL libraries (shared and static):
+      android.hidl.base@1.0, android.hidl.manager@1.0, android.hidl.manager@1.1,
+      android.hidl.manager@1.2, android.hidl.allocator@1.0, android.hidl.memory@1.0,
+      android.hidl.memory.token@1.0, android.hidl.memory.block@1.0,
+      android.hidl.safe_union@1.0, android.hidl.token@1.0,
+    8 Java interface libraries:
+      android.hidl.base-V1.0-java, android.hidl.manager-V1.0-java,
+      android.hidl.manager-V1.1-java, android.hidl.manager-V1.2-java,
+      android.hidl.memory.block-V1.0-java, android.hidl.memory.token-V1.0-java,
+      android.hidl.safe_union-V1.0-java, android.hidl.token-V1.0-java
+  date: 2026-10-26

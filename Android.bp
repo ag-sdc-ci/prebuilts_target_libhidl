@@ -1,0 +1,742 @@
+// Auto-generated prebuilt Blueprint for system/libhidl
+// Staged from Extractive APEX package: org.blisslabs.ag.ext.libhidl
+
+package {
+    default_applicable_licenses: ["system_libhidl_license"],
+}
+
+license {
+    name: "system_libhidl_license",
+    visibility: [":__subpackages__"],
+    license_kinds: [
+        "SPDX-license-identifier-Apache-2.0",
+    ],
+    license_text: [
+        "NOTICE",
+    ],
+}
+
+hidl_package_root {
+    name: "android.hidl",
+}
+
+filegroup {
+    name: "checked_in_hidl_current",
+    srcs: ["current.txt"],
+}
+
+cc_defaults {
+    name: "libhidl-defaults",
+    cflags: [
+        "-Wall",
+        "-Wdocumentation",
+        "-Werror",
+        "-Wextra-semi",
+    ],
+}
+
+cc_defaults {
+    name: "libhidlbase-combined-impl",
+    export_include_dirs: ["include"],
+    header_libs: ["libfmq-base"],
+    export_header_lib_headers: ["libfmq-base"],
+    shared_libs: [
+        "libbase",
+        "liblog",
+        "libutils",
+        "libcutils",
+    ],
+    export_shared_lib_headers: [
+        "libcutils",
+        "libutils",
+    ],
+}
+
+cc_library_headers {
+    name: "libhidl_gtest_helper",
+    vendor_available: true,
+    host_supported: true,
+    export_include_dirs: ["include"],
+}
+
+phony {
+    name: "libhidl",
+    required: [
+        "libhidlbase",
+    ],
+}
+
+cc_prebuilt_library {
+    name: "libhidlbase",
+    vendor_available: true,
+    product_available: true,
+    recovery_available: true,
+    native_bridge_supported: true,
+    host_supported: true,
+    check_elf_files: false,
+    double_loadable: true,
+    vndk: {
+        enabled: true,
+        support_system_process: true,
+    },
+    export_include_dirs: ["include"],
+    shared_libs: [
+        "libbase",
+        "libcutils",
+        "liblog",
+        "libutils",
+        "libvndksupport",
+    ],
+    header_libs: [
+        "libfmq-base",
+    ],
+    export_shared_lib_headers: [
+        "libcutils",
+        "libutils",
+    ],
+    export_header_lib_headers: [
+        "libfmq-base",
+    ],
+    prefer: true,
+    apex_available: [
+        "//apex_available:platform",
+        "com.android.neuralnetworks",
+        "test_com.android.neuralnetworks",
+        "com.android.btservices",
+        "com.android.media",
+        "com.android.media.swcodec",
+        "com.android.nfcservices",
+        "com.android.tethering",
+    ],
+    min_sdk_version: "29",
+    arch: {
+        x86_64: {
+            shared: {
+                srcs: ["lib64/libhidlbase.so"],
+            },
+            static: {
+                srcs: ["lib64/libhidlbase.a"],
+            },
+        },
+    },
+}
+
+cc_prebuilt_library {
+    name: "libhidltransport",
+    vendor_available: true,
+    check_elf_files: false,
+    prefer: true,
+    arch: {
+        x86_64: {
+            shared: {
+                srcs: ["lib64/libhidltransport.so"],
+            },
+            static: {
+                srcs: ["lib64/libhidltransport.a"],
+            },
+        },
+    },
+}
+
+cc_prebuilt_library {
+    name: "libhidlmemory",
+    recovery_available: true,
+    vendor_available: true,
+    product_available: true,
+    host_supported: true,
+    native_bridge_supported: true,
+    check_elf_files: false,
+    vndk: {
+        enabled: true,
+        support_system_process: true,
+    },
+    apex_available: [
+        "//apex_available:platform",
+        "com.android.neuralnetworks",
+        "test_com.android.neuralnetworks",
+        "com.android.media",
+        "com.android.media.swcodec",
+    ],
+    export_include_dirs: ["include"],
+    shared_libs: [
+        "libbase",
+        "liblog",
+        "libutils",
+        "libcutils",
+        "libhidlbase",
+        "android.hidl.memory@1.0",
+        "android.hidl.memory.token@1.0",
+    ],
+    export_shared_lib_headers: [
+        "android.hidl.memory@1.0",
+        "android.hidl.memory.token@1.0",
+        "libhidlbase",
+    ],
+    prefer: true,
+    min_sdk_version: "29",
+    arch: {
+        x86_64: {
+            shared: {
+                srcs: ["lib64/libhidlmemory.so"],
+            },
+            static: {
+                srcs: ["lib64/libhidlmemory.a"],
+            },
+        },
+    },
+}
+
+cc_prebuilt_library_shared {
+    name: "libhwminijail",
+    vendor: true,
+    check_elf_files: false,
+    export_include_dirs: ["include"],
+    shared_libs: [
+        "libbase",
+        "libminijail",
+    ],
+    prefer: true,
+    arch: {
+        x86_64: {
+            srcs: ["lib64/libhwminijail.so"],
+        },
+    },
+}
+
+cc_prebuilt_library {
+    name: "libhidlallocatorutils",
+    vendor_available: true,
+    check_elf_files: false,
+    vndk: {
+        enabled: true,
+    },
+    double_loadable: true,
+    export_include_dirs: ["include"],
+    shared_libs: [
+        "libbinder",
+        "libcutils",
+        "libhidlbase",
+        "android.hidl.memory@1.0",
+    ],
+    export_shared_lib_headers: [
+        "libbinder",
+        "libhidlbase",
+    ],
+    prefer: true,
+    arch: {
+        x86_64: {
+            shared: {
+                srcs: ["lib64/libhidlallocatorutils.so"],
+            },
+            static: {
+                srcs: ["lib64/libhidlallocatorutils.a"],
+            },
+        },
+    },
+}
+
+cc_prebuilt_library_shared {
+    name: "android.hidl.memory@1.0-impl",
+    vendor_available: true,
+    relative_install_path: "hw",
+    check_elf_files: false,
+    shared_libs: [
+        "libcutils",
+        "libbase",
+        "liblog",
+        "libutils",
+        "libhidlbase",
+        "android.hidl.memory@1.0",
+    ],
+    prefer: true,
+    arch: {
+        x86_64: {
+            srcs: ["lib64/android.hidl.memory@1.0-impl.so"],
+        },
+    },
+}
+
+cc_prebuilt_library {
+    name: "android.hidl.token@1.0-utils",
+    vendor_available: true,
+    host_supported: true,
+    check_elf_files: false,
+    vndk: {
+        enabled: true,
+    },
+    double_loadable: true,
+    export_include_dirs: ["include"],
+    header_libs: ["libbinder_headers"],
+    export_header_lib_headers: ["libbinder_headers"],
+    shared_libs: [
+        "android.hidl.token@1.0",
+        "libhidlbase",
+        "liblog",
+        "libutils",
+    ],
+    export_shared_lib_headers: ["libhidlbase"],
+    prefer: true,
+    min_sdk_version: "29",
+    apex_available: [
+        "//apex_available:anyapex",
+        "//apex_available:platform",
+    ],
+    arch: {
+        x86_64: {
+            shared: {
+                srcs: ["lib64/android.hidl.token@1.0-utils.so"],
+            },
+            static: {
+                srcs: ["lib64/android.hidl.token@1.0-utils.a"],
+            },
+        },
+    },
+}
+
+cc_prebuilt_binary {
+    name: "android.hidl.allocator@1.0-service",
+    relative_install_path: "hw",
+    init_rc: ["etc/init/android.hidl.allocator@1.0-service.rc"],
+    vintf_fragments: ["etc/vintf/manifest/android.hidl.allocator@1.0-service.xml"],
+    system_ext_specific: true,
+    shared_libs: [
+        "android.hidl.allocator@1.0",
+        "libhidlbase",
+        "libbase",
+        "liblog",
+        "libutils",
+        "libcutils",
+    ],
+    prefer: true,
+    arch: {
+        x86_64: {
+            srcs: ["bin/android.hidl.allocator@1.0-service"],
+        },
+    },
+}
+
+cc_prebuilt_library {
+    name: "android.hidl.allocator@1.0",
+    native_bridge_supported: true,
+    check_elf_files: false,
+    export_include_dirs: ["include"],
+    shared_libs: [
+        "android.hidl.base@1.0",
+        "libhidlbase",
+        "liblog",
+        "libcutils",
+        "libutils",
+    ],
+    export_shared_lib_headers: [
+        "android.hidl.base@1.0",
+        "libhidlbase",
+    ],
+    prefer: true,
+    apex_available: [
+        "//apex_available:anyapex",
+        "//apex_available:platform",
+    ],
+    arch: {
+        x86_64: {
+            shared: {
+                srcs: ["lib64/android.hidl.allocator@1.0.so"],
+            },
+            static: {
+                srcs: ["lib64/android.hidl.allocator@1.0.a"],
+            },
+        },
+    },
+}
+
+cc_prebuilt_library {
+    name: "android.hidl.base@1.0",
+    native_bridge_supported: true,
+    check_elf_files: false,
+    export_include_dirs: ["include"],
+    shared_libs: [
+        "libhidlbase",
+        "liblog",
+        "libcutils",
+        "libutils",
+    ],
+    export_shared_lib_headers: [
+        "libhidlbase",
+    ],
+    prefer: true,
+    apex_available: [
+        "//apex_available:anyapex",
+        "//apex_available:platform",
+    ],
+    arch: {
+        x86_64: {
+            shared: {
+                srcs: ["lib64/android.hidl.base@1.0.so"],
+            },
+            static: {
+                srcs: ["lib64/android.hidl.base@1.0.a"],
+            },
+        },
+    },
+}
+
+cc_prebuilt_library {
+    name: "android.hidl.manager@1.0",
+    check_elf_files: false,
+    export_include_dirs: ["include"],
+    shared_libs: [
+        "android.hidl.base@1.0",
+        "libhidlbase",
+        "liblog",
+        "libcutils",
+        "libutils",
+    ],
+    export_shared_lib_headers: [
+        "android.hidl.base@1.0",
+        "libhidlbase",
+    ],
+    prefer: true,
+    apex_available: [
+        "//apex_available:anyapex",
+        "//apex_available:platform",
+    ],
+    arch: {
+        x86_64: {
+            shared: {
+                srcs: ["lib64/android.hidl.manager@1.0.so"],
+            },
+            static: {
+                srcs: ["lib64/android.hidl.manager@1.0.a"],
+            },
+        },
+    },
+}
+
+cc_prebuilt_library {
+    name: "android.hidl.manager@1.1",
+    check_elf_files: false,
+    export_include_dirs: ["include"],
+    shared_libs: [
+        "android.hidl.base@1.0",
+        "android.hidl.manager@1.0",
+        "libhidlbase",
+        "liblog",
+        "libcutils",
+        "libutils",
+    ],
+    export_shared_lib_headers: [
+        "android.hidl.base@1.0",
+        "android.hidl.manager@1.0",
+        "libhidlbase",
+    ],
+    prefer: true,
+    apex_available: [
+        "//apex_available:anyapex",
+        "//apex_available:platform",
+    ],
+    arch: {
+        x86_64: {
+            shared: {
+                srcs: ["lib64/android.hidl.manager@1.1.so"],
+            },
+            static: {
+                srcs: ["lib64/android.hidl.manager@1.1.a"],
+            },
+        },
+    },
+}
+
+cc_prebuilt_library {
+    name: "android.hidl.manager@1.2",
+    check_elf_files: false,
+    export_include_dirs: ["include"],
+    shared_libs: [
+        "android.hidl.base@1.0",
+        "android.hidl.manager@1.0",
+        "android.hidl.manager@1.1",
+        "libhidlbase",
+        "liblog",
+        "libcutils",
+        "libutils",
+    ],
+    export_shared_lib_headers: [
+        "android.hidl.base@1.0",
+        "android.hidl.manager@1.0",
+        "android.hidl.manager@1.1",
+        "libhidlbase",
+    ],
+    prefer: true,
+    apex_available: [
+        "//apex_available:anyapex",
+        "//apex_available:platform",
+    ],
+    arch: {
+        x86_64: {
+            shared: {
+                srcs: ["lib64/android.hidl.manager@1.2.so"],
+            },
+            static: {
+                srcs: ["lib64/android.hidl.manager@1.2.a"],
+            },
+        },
+    },
+}
+
+cc_prebuilt_library {
+    name: "android.hidl.memory@1.0",
+    native_bridge_supported: true,
+    check_elf_files: false,
+    double_loadable: true,
+    vndk: {
+        enabled: true,
+        support_system_process: true,
+    },
+    export_include_dirs: ["include"],
+    shared_libs: [
+        "android.hidl.base@1.0",
+        "libhidlbase",
+        "liblog",
+        "libcutils",
+        "libutils",
+    ],
+    export_shared_lib_headers: [
+        "android.hidl.base@1.0",
+        "libhidlbase",
+    ],
+    prefer: true,
+    apex_available: [
+        "//apex_available:anyapex",
+        "//apex_available:platform",
+    ],
+    arch: {
+        x86_64: {
+            shared: {
+                srcs: ["lib64/android.hidl.memory@1.0.so"],
+            },
+            static: {
+                srcs: ["lib64/android.hidl.memory@1.0.a"],
+            },
+        },
+    },
+}
+
+cc_prebuilt_library {
+    name: "android.hidl.memory.block@1.0",
+    check_elf_files: false,
+    export_include_dirs: ["include"],
+    shared_libs: [
+        "android.hidl.base@1.0",
+        "android.hidl.memory.token@1.0",
+        "libhidlbase",
+        "liblog",
+        "libcutils",
+        "libutils",
+    ],
+    export_shared_lib_headers: [
+        "android.hidl.base@1.0",
+        "android.hidl.memory.token@1.0",
+        "libhidlbase",
+    ],
+    prefer: true,
+    arch: {
+        x86_64: {
+            shared: {
+                srcs: ["lib64/android.hidl.memory.block@1.0.so"],
+            },
+            static: {
+                srcs: ["lib64/android.hidl.memory.block@1.0.a"],
+            },
+        },
+    },
+}
+
+cc_prebuilt_library {
+    name: "android.hidl.memory.token@1.0",
+    native_bridge_supported: true,
+    check_elf_files: false,
+    double_loadable: true,
+    vndk: {
+        enabled: true,
+        support_system_process: true,
+    },
+    export_include_dirs: ["include"],
+    shared_libs: [
+        "android.hidl.base@1.0",
+        "libhidlbase",
+        "liblog",
+        "libcutils",
+        "libutils",
+    ],
+    export_shared_lib_headers: [
+        "android.hidl.base@1.0",
+        "libhidlbase",
+    ],
+    prefer: true,
+    apex_available: [
+        "//apex_available:anyapex",
+        "//apex_available:platform",
+    ],
+    arch: {
+        x86_64: {
+            shared: {
+                srcs: ["lib64/android.hidl.memory.token@1.0.so"],
+            },
+            static: {
+                srcs: ["lib64/android.hidl.memory.token@1.0.a"],
+            },
+        },
+    },
+}
+
+cc_prebuilt_library {
+    name: "android.hidl.safe_union@1.0",
+    check_elf_files: false,
+    double_loadable: true,
+    vndk: {
+        enabled: true,
+        support_system_process: true,
+    },
+    export_include_dirs: ["include"],
+    shared_libs: [
+        "libhidlbase",
+        "liblog",
+        "libcutils",
+        "libutils",
+    ],
+    export_shared_lib_headers: [
+        "libhidlbase",
+    ],
+    prefer: true,
+    apex_available: [
+        "//apex_available:anyapex",
+        "//apex_available:platform",
+    ],
+    arch: {
+        x86_64: {
+            shared: {
+                srcs: ["lib64/android.hidl.safe_union@1.0.so"],
+            },
+            static: {
+                srcs: ["lib64/android.hidl.safe_union@1.0.a"],
+            },
+        },
+    },
+}
+
+cc_prebuilt_library {
+    name: "android.hidl.token@1.0",
+    check_elf_files: false,
+    vndk: {
+        enabled: true,
+    },
+    export_include_dirs: ["include"],
+    shared_libs: [
+        "android.hidl.base@1.0",
+        "libhidlbase",
+        "liblog",
+        "libcutils",
+        "libutils",
+    ],
+    export_shared_lib_headers: [
+        "android.hidl.base@1.0",
+        "libhidlbase",
+    ],
+    prefer: true,
+    apex_available: [
+        "//apex_available:anyapex",
+        "//apex_available:platform",
+    ],
+    arch: {
+        x86_64: {
+            shared: {
+                srcs: ["lib64/android.hidl.token@1.0.so"],
+            },
+            static: {
+                srcs: ["lib64/android.hidl.token@1.0.a"],
+            },
+        },
+    },
+}
+
+java_import {
+    name: "android.hidl.base-V1.0-java",
+    jars: ["framework/android.hidl.base-V1.0-java.jar"],
+    sdk_version: "core_current",
+    apex_available: [
+        "//apex_available:anyapex",
+        "//apex_available:platform",
+    ],
+    prefer: true,
+}
+
+java_import {
+    name: "android.hidl.manager-V1.0-java",
+    jars: ["framework/android.hidl.manager-V1.0-java.jar"],
+    sdk_version: "core_current",
+    apex_available: [
+        "//apex_available:anyapex",
+        "//apex_available:platform",
+    ],
+    prefer: true,
+}
+
+java_import {
+    name: "android.hidl.manager-V1.1-java",
+    jars: ["framework/android.hidl.manager-V1.1-java.jar"],
+    sdk_version: "core_current",
+    apex_available: [
+        "//apex_available:anyapex",
+        "//apex_available:platform",
+    ],
+    prefer: true,
+}
+
+java_import {
+    name: "android.hidl.manager-V1.2-java",
+    jars: ["framework/android.hidl.manager-V1.2-java.jar"],
+    sdk_version: "core_current",
+    apex_available: [
+        "//apex_available:anyapex",
+        "//apex_available:platform",
+    ],
+    prefer: true,
+}
+
+java_import {
+    name: "android.hidl.memory.block-V1.0-java",
+    jars: ["framework/android.hidl.memory.block-V1.0-java.jar"],
+    sdk_version: "core_current",
+    prefer: true,
+}
+
+java_import {
+    name: "android.hidl.memory.token-V1.0-java",
+    jars: ["framework/android.hidl.memory.token-V1.0-java.jar"],
+    sdk_version: "core_current",
+    apex_available: [
+        "//apex_available:anyapex",
+        "//apex_available:platform",
+    ],
+    prefer: true,
+}
+
+java_import {
+    name: "android.hidl.safe_union-V1.0-java",
+    jars: ["framework/android.hidl.safe_union-V1.0-java.jar"],
+    sdk_version: "core_current",
+    apex_available: [
+        "//apex_available:anyapex",
+        "//apex_available:platform",
+    ],
+    prefer: true,
+}
+
+java_import {
+    name: "android.hidl.token-V1.0-java",
+    jars: ["framework/android.hidl.token-V1.0-java.jar"],
+    sdk_version: "core_current",
+    apex_available: [
+        "//apex_available:anyapex",
+        "//apex_available:platform",
+    ],
+    prefer: true,
+}

@@ -259,6 +259,7 @@ cc_prebuilt_library_shared {
 cc_prebuilt_library {
     name: "android.hidl.token@1.0-utils",
     vendor_available: true,
+    product_available: true,
     host_supported: true,
     check_elf_files: false,
     vndk: {
@@ -317,7 +318,10 @@ cc_prebuilt_binary {
 
 cc_prebuilt_library {
     name: "android.hidl.allocator@1.0",
+    vendor_available: true,
+    product_available: true,
     host_supported: true,
+    recovery_available: true,
     native_bridge_supported: true,
     check_elf_files: false,
     export_include_dirs: ["include"],
@@ -352,6 +356,7 @@ cc_prebuilt_library {
 cc_prebuilt_library {
     name: "android.hidl.base@1.0",
     vendor_available: true,
+    product_available: true,
     host_supported: true,
     recovery_available: true,
     native_bridge_supported: true,
@@ -385,7 +390,10 @@ cc_prebuilt_library {
 
 cc_prebuilt_library {
     name: "android.hidl.manager@1.0",
+    vendor_available: true,
+    product_available: true,
     host_supported: true,
+    recovery_available: true,
     check_elf_files: false,
     export_include_dirs: ["include"],
     shared_libs: [
@@ -418,7 +426,10 @@ cc_prebuilt_library {
 
 cc_prebuilt_library {
     name: "android.hidl.manager@1.1",
+    vendor_available: true,
+    product_available: true,
     host_supported: true,
+    recovery_available: true,
     check_elf_files: false,
     export_include_dirs: ["include"],
     shared_libs: [
@@ -453,7 +464,10 @@ cc_prebuilt_library {
 
 cc_prebuilt_library {
     name: "android.hidl.manager@1.2",
+    vendor_available: true,
+    product_available: true,
     host_supported: true,
+    recovery_available: true,
     check_elf_files: false,
     export_include_dirs: ["include"],
     shared_libs: [
@@ -491,6 +505,7 @@ cc_prebuilt_library {
 cc_prebuilt_library {
     name: "android.hidl.memory@1.0",
     vendor_available: true,
+    product_available: true,
     host_supported: true,
     recovery_available: true,
     native_bridge_supported: true,
@@ -531,6 +546,8 @@ cc_prebuilt_library {
 
 cc_prebuilt_library {
     name: "android.hidl.memory.block@1.0",
+    vendor_available: true,
+    product_available: true,
     host_supported: true,
     recovery_available: true,
     check_elf_files: false,
@@ -564,6 +581,7 @@ cc_prebuilt_library {
 cc_prebuilt_library {
     name: "android.hidl.memory.token@1.0",
     vendor_available: true,
+    product_available: true,
     host_supported: true,
     recovery_available: true,
     native_bridge_supported: true,
@@ -605,6 +623,7 @@ cc_prebuilt_library {
 cc_prebuilt_library {
     name: "android.hidl.safe_union@1.0",
     vendor_available: true,
+    product_available: true,
     host_supported: true,
     recovery_available: true,
     check_elf_files: false,
@@ -643,7 +662,9 @@ cc_prebuilt_library {
 cc_prebuilt_library {
     name: "android.hidl.token@1.0",
     vendor_available: true,
+    product_available: true,
     host_supported: true,
+    recovery_available: true,
     check_elf_files: false,
     vndk: {
         enabled: true,

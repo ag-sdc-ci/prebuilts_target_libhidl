@@ -350,6 +350,7 @@ cc_prebuilt_library {
 
 cc_prebuilt_library {
     name: "android.hidl.base@1.0",
+    host_supported: true,
     native_bridge_supported: true,
     check_elf_files: false,
     export_include_dirs: ["include"],
@@ -381,6 +382,7 @@ cc_prebuilt_library {
 
 cc_prebuilt_library {
     name: "android.hidl.manager@1.0",
+    host_supported: true,
     check_elf_files: false,
     export_include_dirs: ["include"],
     shared_libs: [
@@ -413,6 +415,7 @@ cc_prebuilt_library {
 
 cc_prebuilt_library {
     name: "android.hidl.manager@1.1",
+    host_supported: true,
     check_elf_files: false,
     export_include_dirs: ["include"],
     shared_libs: [
@@ -447,6 +450,7 @@ cc_prebuilt_library {
 
 cc_prebuilt_library {
     name: "android.hidl.manager@1.2",
+    host_supported: true,
     check_elf_files: false,
     export_include_dirs: ["include"],
     shared_libs: [
@@ -592,6 +596,7 @@ cc_prebuilt_library {
 cc_prebuilt_library {
     name: "android.hidl.safe_union@1.0",
     vendor_available: true,
+    host_supported: true,
     check_elf_files: false,
     double_loadable: true,
     vndk: {
@@ -628,6 +633,7 @@ cc_prebuilt_library {
 cc_prebuilt_library {
     name: "android.hidl.token@1.0",
     vendor_available: true,
+    host_supported: true,
     check_elf_files: false,
     vndk: {
         enabled: true,

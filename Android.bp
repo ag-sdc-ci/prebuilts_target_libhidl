@@ -483,6 +483,7 @@ cc_prebuilt_library {
 
 cc_prebuilt_library {
     name: "android.hidl.memory@1.0",
+    vendor_available: true,
     native_bridge_supported: true,
     check_elf_files: false,
     double_loadable: true,
@@ -551,6 +552,7 @@ cc_prebuilt_library {
 
 cc_prebuilt_library {
     name: "android.hidl.memory.token@1.0",
+    vendor_available: true,
     native_bridge_supported: true,
     check_elf_files: false,
     double_loadable: true,
@@ -589,6 +591,7 @@ cc_prebuilt_library {
 
 cc_prebuilt_library {
     name: "android.hidl.safe_union@1.0",
+    vendor_available: true,
     check_elf_files: false,
     double_loadable: true,
     vndk: {
@@ -624,6 +627,7 @@ cc_prebuilt_library {
 
 cc_prebuilt_library {
     name: "android.hidl.token@1.0",
+    vendor_available: true,
     check_elf_files: false,
     vndk: {
         enabled: true,

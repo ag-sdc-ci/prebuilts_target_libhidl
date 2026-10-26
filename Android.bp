@@ -601,6 +601,7 @@ cc_prebuilt_library {
     name: "android.hidl.safe_union@1.0",
     vendor_available: true,
     host_supported: true,
+    recovery_available: true,
     check_elf_files: false,
     double_loadable: true,
     vndk: {

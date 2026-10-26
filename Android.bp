@@ -317,6 +317,7 @@ cc_prebuilt_binary {
 
 cc_prebuilt_library {
     name: "android.hidl.allocator@1.0",
+    host_supported: true,
     native_bridge_supported: true,
     check_elf_files: false,
     export_include_dirs: ["include"],
@@ -488,6 +489,7 @@ cc_prebuilt_library {
 cc_prebuilt_library {
     name: "android.hidl.memory@1.0",
     vendor_available: true,
+    host_supported: true,
     native_bridge_supported: true,
     check_elf_files: false,
     double_loadable: true,
@@ -526,6 +528,7 @@ cc_prebuilt_library {
 
 cc_prebuilt_library {
     name: "android.hidl.memory.block@1.0",
+    host_supported: true,
     check_elf_files: false,
     export_include_dirs: ["include"],
     shared_libs: [
@@ -557,6 +560,7 @@ cc_prebuilt_library {
 cc_prebuilt_library {
     name: "android.hidl.memory.token@1.0",
     vendor_available: true,
+    host_supported: true,
     native_bridge_supported: true,
     check_elf_files: false,
     double_loadable: true,

@@ -259,7 +259,6 @@ cc_prebuilt_library_shared {
 cc_prebuilt_library {
     name: "android.hidl.token@1.0-utils",
     vendor_available: true,
-    product_available: true,
     host_supported: true,
     check_elf_files: false,
     vndk: {
